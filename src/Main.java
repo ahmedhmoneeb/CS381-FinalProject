@@ -25,7 +25,7 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         primaryStage.setTitle("SimCalc");
         primaryStage.show();
-        
+        int x = 40;
         //main textField
         TextField screen = new TextField();
         screen.setEditable(false);
@@ -77,34 +77,34 @@ public class Main extends Application {
         							dot,button_0,clear,equal);
 
     	//buttons properties "size"
-        squarX.setMinSize(40, 40);
-        invX.setMinSize(40, 40);
-        sqrt .setMinSize(40, 40);
-        log.setMinSize(40, 40);    
-        sin.setMinSize(40, 40);
-        cos.setMinSize(40, 40);
-        tan.setMinSize(40, 40);
-        pi.setMinSize(40, 40);
-        lArc.setMinSize(40, 40);
-        rArc.setMinSize(40, 40);
-        mud.setMinSize(40, 40);
-        div.setMinSize(40, 40);
-        button_7.setMinSize(40, 40);
-        button_8.setMinSize(40, 40);
-        button_9.setMinSize(40, 40);
-        muil.setMinSize(40, 40);
-        button_4.setMinSize(40, 40);
-        button_5.setMinSize(40, 40);
-        button_6.setMinSize(40, 40);
-        sub.setMinSize(40, 40);
-        button_3.setMinSize(40, 40);
-        button_2.setMinSize(40, 40);
-        button_1.setMinSize(40, 40);
-        sum.setMinSize(40, 40);
-        dot.setMinSize(40, 40);
-        button_0.setMinSize(40, 40);
-        clear.setMinSize(40, 40);
-        equal.setMinSize(40, 40);
+        squarX.setMinSize(40, x);
+        invX.setMinSize(40, x);
+        sqrt .setMinSize(40, x);
+        log.setMinSize(40, x);    
+        sin.setMinSize(40, x);
+        cos.setMinSize(40, x);
+        tan.setMinSize(40, x);
+        pi.setMinSize(40, x);
+        lArc.setMinSize(40, x);
+        rArc.setMinSize(40, x);
+        mud.setMinSize(40, x);
+        div.setMinSize(40, x);
+        button_7.setMinSize(40, x);
+        button_8.setMinSize(40, x);
+        button_9.setMinSize(40, x);
+        muil.setMinSize(40, x);
+        button_4.setMinSize(40,x);
+        button_5.setMinSize(40, x);
+        button_6.setMinSize(40, x);
+        sub.setMinSize(40, x);
+        button_3.setMinSize(40, x);
+        button_2.setMinSize(40, x);
+        button_1.setMinSize(40, x);
+        sum.setMinSize(40, x);
+        dot.setMinSize(40, x);
+        button_0.setMinSize(40, x);
+        clear.setMinSize(40, x);
+        equal.setMinSize(40, x);
 
         //Buttons events and actions
         squarX.setOnAction(e -> 
@@ -119,7 +119,7 @@ public class Main extends Application {
     	});
         sqrt.setOnAction(e -> 
         {
-        	equation.append("sqrt(");
+        	equation.append("\u221A");
         	screen.setText(equation.toString());
     	});
         log.setOnAction(e -> 
@@ -245,6 +245,7 @@ public class Main extends Application {
         equal.setOnAction(e -> 
         {
         	double result = solveEquation(equation);
+        	//double result = solveEquation2(equation);
         	equation.append(" = " + result);
         	screen.setText(equation.toString());
         	equation.delete(0, equation.length());
@@ -262,7 +263,7 @@ public class Main extends Application {
     	{
     		if( operation == ' ' && Character.isDigit( tempEquation.charAt(i) ) )
     		{
-    			rhs.append(tempEquation.charAt(0));
+    			rhs.append(tempEquation.charAt(i));
     		}
     		else
     		{
@@ -285,6 +286,30 @@ public class Main extends Application {
     	}
     	return finalResult;
     }
+    
+//    public static double solveEquation2(StringBuilder tempEquation)
+//    {
+//    	double finalResult = 0;
+//    	String rhs = new String();
+//    	String str=tempEquation.substring(0,4);
+//    	rhs=tempEquation.substring(4,tempEquation.length()-1);
+//            if (str.compareToIgnoreCase("sin(")==0 || str.compareToIgnoreCase("cos(")==0 || str.compareToIgnoreCase("tan(")==0)
+//            {
+//            switch(str){
+//        case "sin(":
+//        	finalResult = Math.sin(Double.parseDouble(rhs));
+//            break;
+//        case "cos(":
+//        	finalResult = Math.cos(Double.parseDouble(rhs));
+//            break;
+//        case "tan(":
+//        	finalResult = Math.tan(Double.parseDouble(rhs));
+//            break;
+//        default : 
+//            break;
+//            }}
+//		return finalResult;
+//    }
     
     public static void main (String[] args) {
     Application.launch(args);  
