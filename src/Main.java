@@ -7,11 +7,10 @@ import javafx.scene.layout.*;
 import javafx.stage.*;
 
 public class Main extends Application {
-
+//moneeb
     @Override
     public void start(Stage primaryStage) {
 
-    	//moneeb
     	//Pane & its properties
     	FlowPane pane = new FlowPane();
         pane.setAlignment(Pos.CENTER);
